@@ -1,13 +1,221 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  list-style: none;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #eaf8e7;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.start::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.start div {
+  position: relative;
+}
+
+.start div h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.start div button {
+  margin-top: 2rem;
+  outline: none;
+  padding: 3rem 6rem;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  background-color: #4da674;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.start button:hover {
+  background-color: #023336;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 4rem;
+}
+
+.sidebar {
+  padding: 2rem;
+  background-color: #a3b18a;
+}
+
+.sidebar h3 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.sidebar ul li {
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 1rem;
+  color: #fff;
+}
+
+.sidebar ul li:first-child {
+  padding-top: 0;
+}
+
+.sidebar ul li:last-child {
+  padding-bottom: 0;
+}
+
+.sidebar ul li:hover {
+  background-color: #588157;
+}
+
+.quizz-container {
+  height: 90vh;
+  padding: 2rem 0;
+  background-color: #c1e6ba;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+h1,
+h2,
+.score,
+.msg {
+  color: #023336;
+}
+
+.quizz {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizz-item {
+  padding: 2rem;
+}
+
+.quizz-item h2 {
+  font-size: 2.4rem;
+}
+
+.quizz-item ol {
+  list-style-type: lower-alpha;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+  column-gap: 6rem;
+  font-size: 2rem;
+}
+
+.quizz-item ol li {
+  background-color: #4da674;
+  padding: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.quizz-item ol li:hover {
+  background-color: #023336;
+  color: #eaf8e7;
+}
+
+.quizz-item span.score,
+.msg {
+  font-size: 1.6rem;
+}
+
+button.btn {
+  margin-top: 2rem;
+  display: flex;
+  justify-self: end;
+  border: none;
+  border-radius: 3rem;
+  background-color: #4da674;
+  padding: 2rem 4rem;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  background-color: #023336;
+  color: #eaf8e7;
+}
+
+.wrong {
+  background-color: red;
+}
+
+.correct {
+  background-color: yellow;
+}
+
+.wrong,
+.correct {
+  font-size: 1.4rem;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+.loading {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #023336;
+}
+
+.final-message {
+  font-size: 2rem;
 }
